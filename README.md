@@ -21,8 +21,13 @@
   9)[Granary](https://galxe.com/Optimism/campaign/GCZeiUtyYt)
 
   10)[bethoven](https://galxe.com/Optimism/campaign/GCZpiUtEUv)
-
-  Примерные затраты на газ при ~15 GWEI ~6-8$
+  
+‼️
+Для работы скрипта нужно иметь на балансе 0,052 ETH + 58$ в ETH эквиваленте  (при цене ETH - 1300 ~0.0431+0.052 ETH, но лучше закиньте 0,1) 
+Для одаренных 0,096+ ETH в OP сети 
+‼️
+  
+Примерные затраты на газ при ~15 GWEI ~6-8$
 
 ## config.py
 
