@@ -1,6 +1,6 @@
 ## Optimism Quests
 
-[Скрипт вполняет задания](https://galxe.com/Optimism/campaign/GC6xiUtedg):
+[Скрипт вполняет Optimism quests](https://galxe.com/Optimism/campaign/GC6xiUtedg):
 
   1)[Uniswap](https://galxe.com/Optimism/campaign/GC6NiUtWQn)
 
