@@ -1,0 +1,1 @@
+from .main_granary import work_granary

@@ -1,0 +1,1 @@
+from .main_polynomial import work_polynomial

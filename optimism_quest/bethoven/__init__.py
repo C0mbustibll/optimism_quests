@@ -1,0 +1,1 @@
+from .main_bethoven import work_beth
