@@ -141,7 +141,7 @@ async def work_polynomial(key):
     tm = random.randint(3, 15)
 
     await asyncio.sleep(tm)
-    if await web3.eth.get_balance(ADDRESS) >=0.05*10**18:
+    if await web3.eth.get_balance(ADDRESS) >=web3.to_wei(57/eth_price(),'ether'):
         tx = await stake(key)
         if await verif_tx(tx):
             return True
