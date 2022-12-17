@@ -33,7 +33,7 @@ def stat_quest(key, *ar):
 
     st = [betho, perpet, granar, syna, rubico, velo, uni, pik, pool, poly] = [bad] * 10
     for v, arg in enumerate(range(len(st))):
-        if ar[0]:
+        if ar[v]:
             st[v] = good
 
     logger.debug(f'\n{"*" * 10}{ADDRESS}{"*" * 10}\n'
