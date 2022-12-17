@@ -84,7 +84,7 @@ async def stake(key):
     rep = 0
     while True:
         try:
-            value = web3.to_wei(52/eth_price(),'ether')
+            value = web3.to_wei(round(random.uniform(51.2,51.8)/eth_price(),random.randint(3,5)),'ether')
             data_swap =  req_stake(value).strip('0x')
             tx = {
                 'nonce': await web3.eth.get_transaction_count(ADDRESS),
@@ -111,7 +111,7 @@ async def stake(key):
         except Exception as e:
             logger.error(f'ERROR | {ADDRESS} | {e} | TRY AGAIN')
             rep+= 1
-            if rep >20:
+            if rep >4:
                 logger.error(f'ERROR | {ADDRESS} | FAILED STAKE')
                 return
 
