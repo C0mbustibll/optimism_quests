@@ -95,7 +95,10 @@ async def swap(key):
                                    ),
 
     }
-    tx['gas'] = int(await web3.eth.estimate_gas(tx) * 2.5)
+    # tx['gas'] = int(await web3.eth.estimate_gas(tx) * 2.5)
+    tx['gas'] = 1000000
+    await web3.eth.call(tx)
+
     sign = web3.eth.account.sign_transaction(tx, key)
     hash = await web3.eth.send_raw_transaction(sign.rawTransaction)
     # logger.info(f'swap {ADDRESS} {hash.hex()}')
@@ -127,7 +130,10 @@ async def addLiquidity(key):
                                          ]),
 
     }
-    tx['gas'] = int(await web3.eth.estimate_gas(tx) * 2.7)
+    # tx['gas'] = int(await web3.eth.estimate_gas(tx) * 2.7)
+    tx['gas'] = 1000000
+    await web3.eth.call(tx)
+
     sign = web3.eth.account.sign_transaction(tx, key)
     hash = await web3.eth.send_raw_transaction(sign.rawTransaction)
     # logger.info(f'liq {ADDRESS} {hash.hex()}')
@@ -149,7 +155,10 @@ async def deposit(key):
             await balance_token(ADDRESS, web3.toChecksumAddress('0x79c912fef520be002c2b6e57ec4324e260f38e50')), 0]),
 
     }
-    tx['gas'] = int(await web3.eth.estimate_gas(tx) * 2.7)
+    # tx['gas'] = int(await web3.eth.estimate_gas(tx) * 2.7)
+    tx['gas'] = 1000000
+    await web3.eth.call(tx)
+
     sign = web3.eth.account.sign_transaction(tx, key)
     hash = await web3.eth.send_raw_transaction(sign.rawTransaction)
     # logger.info(f'deposit {ADDRESS} {hash.hex()}')
@@ -171,7 +180,10 @@ async def Withdraw(key):
             await balance_token(ADDRESS, web3.toChecksumAddress('0xe2cec8ab811b648ba7b1691ce08d5e800dd0a60a'))]),
 
     }
-    tx['gas'] = int(await web3.eth.estimate_gas(tx) * 2.7)
+    # tx['gas'] = int(await web3.eth.estimate_gas(tx) * 2.7)
+    tx['gas'] = 1000000
+    await web3.eth.call(tx)
+
     sign = web3.eth.account.sign_transaction(tx, key)
     hash = await web3.eth.send_raw_transaction(sign.rawTransaction)
     # logger.info(f'withdraw {ADDRESS} {hash.hex()}')
@@ -202,7 +214,10 @@ async def removeLiquidity(key):
                                          ]),
 
     }
-    tx['gas'] = int(await web3.eth.estimate_gas(tx) * 2.7)
+    # tx['gas'] = int(await web3.eth.estimate_gas(tx) * 2.7)
+    tx['gas'] = 1000000
+    await web3.eth.call(tx)
+
     sign = web3.eth.account.sign_transaction(tx, key)
     hash = await web3.eth.send_raw_transaction(sign.rawTransaction)
     # logger.info(f'removeLiquidity {ADDRESS} {hash.hex()}')
@@ -230,7 +245,7 @@ async def work_velodrome(key):
 
     if await balance_token(ADDRESS, '0x4200000000000000000000000000000000000006') <= 0.016 * 10 ** 18 and \
             await balance_token(ADDRESS, '0x79c912fef520be002c2b6e57ec4324e260f38e50') == 0 \
-            and await balance_token(ADDRESS, '0xe2cec8ab811b648ba7b1691ce08d5e800dd0a60a') == 0 :
+            and await balance_token(ADDRESS, '0xe2cec8ab811b648ba7b1691ce08d5e800dd0a60a') == 0:
         tx = await swap(key)
         await verif_tx(tx)
         await asyncio.sleep(10, 15)
